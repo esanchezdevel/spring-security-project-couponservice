@@ -33,8 +33,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		 */
 		http.httpBasic();
 		http.authorizeRequests()
-			.mvcMatchers(HttpMethod.GET, "/couponapi/coupons/**").hasAnyRole("USER", "ADMIN")
-			.mvcMatchers(HttpMethod.POST, "/couponapi/coupons").hasRole("ADMIN")
+			.mvcMatchers(HttpMethod.GET, "/couponapi/coupons/**", "/", "/index", "/createCouponForm", "/createResponse", "/showCoupon", "/getCoupon", "/couponDetails").hasAnyRole("USER", "ADMIN")
+			.mvcMatchers(HttpMethod.POST, "/couponapi/coupons", "/saveCoupon", "/getCoupon").hasRole("ADMIN")
 			.anyRequest().denyAll() //Deny all the requests that not match with the pattern provided
 			.and().csrf().disable();
 	}
