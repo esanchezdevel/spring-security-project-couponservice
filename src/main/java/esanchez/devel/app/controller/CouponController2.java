@@ -15,11 +15,6 @@ public class CouponController2 {
 	@Autowired
 	private CouponRepository couponRepository;
 	
-	@GetMapping("/")
-	public String index() {
-		return "index";
-	}
-	
 	@GetMapping("/createCouponForm")
 	public String show() {
 		return "createCouponForm";
