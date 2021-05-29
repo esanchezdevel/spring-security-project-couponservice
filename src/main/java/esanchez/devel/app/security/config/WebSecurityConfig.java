@@ -38,7 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.mvcMatchers(HttpMethod.POST, "/couponapi/coupons", "/saveCoupon").hasRole("ADMIN")
 			.mvcMatchers(HttpMethod.GET, "/createCouponForm", "/createResponse").hasRole("ADMIN")
 			.mvcMatchers(HttpMethod.POST, "/getCoupon").hasAnyRole("USER", "ADMIN")
-			.mvcMatchers("/").permitAll()
+			.mvcMatchers("/", "/showReg", "/registerUser").permitAll()
 			.mvcMatchers(HttpMethod.POST, "/login").permitAll()
 			.anyRequest().denyAll() //Deny all the requests that not match with the pattern provided
 			.and().csrf().disable()
