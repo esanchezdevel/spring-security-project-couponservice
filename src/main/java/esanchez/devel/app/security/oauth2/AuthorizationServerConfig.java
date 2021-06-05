@@ -15,7 +15,7 @@ import org.springframework.security.oauth2.provider.token.store.InMemoryTokenSto
  * 
  * This will be the Authentication Server
  * It uses the AuthenticationManager that we have created as a @Bean in the Oauth2SecurityConfig file
- * Also we use the UserDetailsService by default
+ * Also we use the UserDetailsService that we made for use mysql
  *
  */
 @Configuration
